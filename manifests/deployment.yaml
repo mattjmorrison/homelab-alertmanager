@@ -13,6 +13,7 @@ spec:
       labels:
         app: alertmanager
     spec:
+      serviceAccountName: alertmanager
       containers:
         - name: alertmanager
           image: prom/alertmanager:latest
