@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alertmanager-discord-proxy
+  namespace: monitoring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: alertmanager-discord-proxy
+  template:
+    metadata:
+      labels:
+        app: alertmanager-discord-proxy
+    spec:
+      containers:
+        - name: alertmanager-discord-proxy
+          image: benjojo/alertmanager-discord:latest
+          ports:
+            - containerPort: 9094
+          env:
+            - name: DISCORD_WEBHOOK
+              valueFrom:
+                secretKeyRef:
+                  name: alertmanager-discord
+                  key: DISCORD_WEBHOOK_URL

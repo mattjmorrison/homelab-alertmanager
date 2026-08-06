@@ -18,5 +18,5 @@ data:
     receivers:
       - name: discord
         webhook_configs:
-          - url_file: /etc/alertmanager-secrets/DISCORD_WEBHOOK_URL
+          - url: 'http://alertmanager-discord-proxy.monitoring.svc:9094'
             send_resolved: true
