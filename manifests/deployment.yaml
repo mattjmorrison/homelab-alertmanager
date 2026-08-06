@@ -19,6 +19,7 @@ spec:
           image: prom/alertmanager:latest
           args:
             - --config.file=/etc/alertmanager/alertmanager.yml
+            - --config.expand-env=true
           ports:
             - containerPort: 9093
           env:
