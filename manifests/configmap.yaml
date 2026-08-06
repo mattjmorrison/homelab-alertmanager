@@ -18,5 +18,5 @@ data:
     receivers:
       - name: discord
         webhook_configs:
-          - webhook_url_file: /etc/alertmanager-secrets/DISCORD_WEBHOOK_URL
+          - url_file: /etc/alertmanager-secrets/DISCORD_WEBHOOK_URL
             send_resolved: true
