@@ -18,7 +18,7 @@ spec:
       serviceAccountName: alertmanager
       containers:
         - name: alertmanager
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: "{{ .Values.image.repository }}@{{ .Values.image.digest }}"
           args:
             - --config.file=/etc/alertmanager/alertmanager.yml
           ports:

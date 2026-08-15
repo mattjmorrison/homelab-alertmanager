@@ -1,8 +1,11 @@
 image:
   repository: prom/alertmanager
-  tag: latest
+  digest: sha256:9e082985f56f4c8c9f724e18f2288c6708f472e56a5286b8863d080434ea065d # v0.33.1
 
 discordProxy:
   image:
     repository: benjojo/alertmanager-discord
-    tag: latest
+    # No versioned releases upstream (no GitHub releases or tags at all) —
+    # pinning by digest instead of tag, since that's the only stable
+    # reference available.
+    digest: sha256:7d27cd8494b269fe592cf6a9d7f6bdf14ac628bba34c381dc43cf533eaa95158
