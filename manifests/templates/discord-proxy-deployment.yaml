@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: alertmanager-discord-proxy
-          image: benjojo/alertmanager-discord:latest
+          image: "{{ .Values.discordProxy.image.repository }}:{{ .Values.discordProxy.image.tag }}"
           ports:
             - containerPort: 9094
           env:

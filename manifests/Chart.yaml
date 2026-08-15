@@ -1,0 +1,5 @@
+apiVersion: v2
+name: homelab-alertmanager
+description: Alertmanager with a Discord notification proxy
+version: 0.1.0
+appVersion: "latest"

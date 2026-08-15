@@ -12,11 +12,13 @@ spec:
     metadata:
       labels:
         app: alertmanager
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
     spec:
       serviceAccountName: alertmanager
       containers:
         - name: alertmanager
-          image: prom/alertmanager:latest
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           args:
             - --config.file=/etc/alertmanager/alertmanager.yml
           ports:

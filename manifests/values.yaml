@@ -1,0 +1,8 @@
+image:
+  repository: prom/alertmanager
+  tag: latest
+
+discordProxy:
+  image:
+    repository: benjojo/alertmanager-discord
+    tag: latest
